@@ -1,0 +1,47 @@
+.metodo {
+  border-bottom: 2px solid black;
+  width: 60%;
+}
+.metodo:hover {
+  cursor: pointer;
+}
+
+.metodo-title {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 24px;
+  padding-right: 72px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.metodo-title::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid #211E26;
+  border-bottom: 2px solid #211E26;
+  position: absolute;
+  
+  top: 34px;
+  right: 36px;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.active::after {
+  transform: rotate(135deg);
+}
+
+.metodo-content {
+  padding: 0 0 32px 16px;
+  line-height: 26px;
+  color: #564F62;
+}
