@@ -36,7 +36,10 @@ function calcularComentarios(codigoMetodo) {
 	var lineas_del_archivo = codigoMetodo.split('\n').length - 1;
 	var lineas_comentarios_simples = codigoMetodo.split('//').length - 1;
 	var porcentaje_lineas_comentadas = (parseFloat((parseInt(lineas_comentarios_simples)/parseInt(lineas_del_archivo))*100).toFixed(2))+"%";
-	if(isNaN(porcentaje_lineas_comentadas)) porcentaje_lineas_comentadas = 0+"%";
+	console.log(lineas_del_archivo);
+	console.log(porcentaje_lineas_comentadas);
+	console.log(lineas_comentarios_simples);
+	if(!porcentaje_lineas_comentadas) porcentaje_lineas_comentadas = 0+"%";
 	return porcentaje_lineas_comentadas;
 }
 
