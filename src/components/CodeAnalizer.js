@@ -4,7 +4,7 @@ import { navigate } from "gatsby";
 import analizarCodigo from "../services/Analizador";
 const handleSubmit = (event, texto) => {
     event.preventDefault();
-    if(texto != "") {
+    if(texto !== "") {
         let codigoAnalizado = analizarCodigo(texto); 
         navigate("/codigo-analizado/",
             { state: { codigoAnalizado } }
@@ -27,7 +27,6 @@ const CodeAnalizer = () => {
             <button >Analizar Codigo</button>
             <TextareaAutosize
                 onChange={(e) => setTexto(e.target.value) || navigate("#")}
-                autoFocus
                 spellCheck="false"
                 style={textAreaStyle}
                 minRows="10" />

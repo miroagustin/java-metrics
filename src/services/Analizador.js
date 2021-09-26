@@ -36,9 +36,6 @@ function calcularComentarios(codigoMetodo) {
 	var lineas_del_archivo = codigoMetodo.split('\n').length - 1;
 	var lineas_comentarios_simples = codigoMetodo.split('//').length - 1;
 	var porcentaje_lineas_comentadas = (parseFloat((parseInt(lineas_comentarios_simples)/parseInt(lineas_del_archivo))*100).toFixed(2))+"%";
-	console.log(lineas_del_archivo);
-	console.log(porcentaje_lineas_comentadas);
-	console.log(lineas_comentarios_simples);
 	if(!porcentaje_lineas_comentadas) porcentaje_lineas_comentadas = 0+"%";
 	return porcentaje_lineas_comentadas;
 }
@@ -69,7 +66,7 @@ function halsteadMetodo(texto)
 		//OPERADORES UNICOS Y TOTALES.
 		for (i = 0; i < operadores.length; i++) 
 		{
-			if(codigoMetodo.indexOf(operadores[i]) !=-1)
+			if(codigoMetodo.indexOf(operadores[i]) !==-1)
 				cantidadOperadoresUnicos++;
 			cantidadOperadoresTotales += texto.split(operadores[i]).length-1;
 		}
@@ -82,13 +79,13 @@ function halsteadMetodo(texto)
 		for (let j = 0; j < hasta; j++) 
 		{
 			//Si no es un operador y todavia no esta en el array de operandos unicos.
-			if(operadores.indexOf(aAnalizar[j]) == -1 && operandosUnicos.indexOf(aAnalizar[j]) == -1)
+			if(operadores.indexOf(aAnalizar[j]) === -1 && operandosUnicos.indexOf(aAnalizar[j]) === -1)
 			{
 				operandosUnicos.push(aAnalizar[j]);
 				cantidadOperandosUnicos++;
 			}
 			//Si no es un operador.
-			if(operadores.indexOf(aAnalizar[j]) == -1)
+			if(operadores.indexOf(aAnalizar[j]) === -1)
 				cantidadOperandosTotales++;
 		}
 		var longitudHalstead = parseInt(cantidadOperadoresUnicos*Math.log2(cantidadOperadoresUnicos)+cantidadOperandosUnicos*Math.log2(cantidadOperandosUnicos));

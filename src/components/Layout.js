@@ -1,9 +1,8 @@
 import * as React from "react"
 
 const pageStyles = {
-    color: "#232129",
     padding: 96,
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    flex: 1
 }
 const headingStyles = {
     marginTop: 0,
@@ -13,19 +12,35 @@ const headingStyles = {
 const paragraphStyles = {
     marginBottom: 48,
 }
+const bodyStyles = {
+    display: "flex",
+    flexDirection: "column",
+    minWidth: "100vh",
+    fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    color: "#232129",
+}
+const footerStyles = {
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "flex-end"
+}
 
 const LayoutComponent = (props) => {
     return (
-        <main style={pageStyles}>
+        <div style={bodyStyles}>
             <title>Java Metrics - {props.supertitulo}</title>
-            <h1 style={headingStyles}>
-                {props.titulo}
-            </h1>
-            <p style={paragraphStyles}>
-                {props.subtitulo}
-            </p>
-            {props.children}
-        </main>
+            <main style={pageStyles}>
+                <h1 style={headingStyles}>
+                    {props.titulo}
+                </h1>
+                <p style={paragraphStyles}>
+                    {props.subtitulo}
+                </p>
+                {props.children}
+            </main>
+            <footer style={footerStyles}>Hecho por Grupo 2 Analisis de Software UnlaM 2021.</footer>
+        </div>
+
     )
 }
 
