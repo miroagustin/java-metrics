@@ -28,7 +28,25 @@ const ListaMetodos = (props) => {
                                 Volumen Halstead: {metodo.volumenHalstead}
                             </li>
                             <li>
-                                Porcentaje de lineas con comentarios simples: {metodo.porcentajeComentarios}
+                                Porcentaje de lineas con comentarios simples: {metodo.metricasComentarios.porcentajeComentarios}
+                            </li>
+                            <li>
+                                Cantidad de lineas totales: {metodo.metricasComentarios.lineasTotales}
+                            </li>
+                            <li>
+                                Cantidad de lineas con comentarios simples: {metodo.metricasComentarios.lineasComentariosSimples}
+                            </li>
+                            <li>
+                                Cantidad de lineas en blanco: {metodo.metricasComentarios.lineasVacias}
+                            </li>
+                            <li>
+                                Cantidad de lineas de codigo: {metodo.metricasComentarios.lineasCodigo}
+                            </li>
+                            <li>
+                                Fan In: {metodo.fanIn}
+                            </li>
+                            <li>
+                                Fan Out: {metodo.fanOut}
                             </li>
                         </ul>
                     </Collapsible>)

@@ -29,7 +29,8 @@ const CodeAnalizer = () => {
                 onChange={(e) => setTexto(e.target.value) || navigate("#")}
                 spellCheck="false"
                 style={textAreaStyle}
-                minRows="10" />
+                minRows="10"
+                value={texto} />
         </form>
 
     )

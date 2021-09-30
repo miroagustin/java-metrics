@@ -1,7 +1,8 @@
 import * as React from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
 const pageStyles = {
-    padding: 96,
+    padding: 68,
     flex: 1
 }
 const headingStyles = {
@@ -22,13 +23,18 @@ const bodyStyles = {
 const footerStyles = {
     display: "flex",
     alignItems: "flex-end",
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
 }
 
 const LayoutComponent = (props) => {
     return (
         <div style={bodyStyles}>
             <title>Java Metrics - {props.supertitulo}</title>
+            <header><StaticImage
+                alt="UnlaM"
+                src="../images/logo-unlam.png"
+                height={128}
+                width={128} /></header>
             <main style={pageStyles}>
                 <h1 style={headingStyles}>
                     {props.titulo}
@@ -38,7 +44,7 @@ const LayoutComponent = (props) => {
                 </p>
                 {props.children}
             </main>
-            <footer style={footerStyles}>Hecho por Grupo 2 Analisis de Software UnlaM 2021.</footer>
+            <footer style={footerStyles}><h3>Hecho por Grupo 2 Analisis de Software UnlaM 2021.</h3></footer>
         </div>
 
     )
