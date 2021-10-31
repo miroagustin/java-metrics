@@ -77,6 +77,7 @@ function complejidadCiclomatica(texto) {
 	c += codigoMetodo.split(/\bif\b/gm).length - 1;
 	c += codigoMetodo.split(/\bfor\b/gm).length - 1;
 	c += codigoMetodo.split(/\bwhile\b/gm).length - 1;
+	c += codigoMetodo.split(/\bcatch\b/gm).length - 1;
 	c += codigoMetodo.split(' || ').length - 1;
 	c += codigoMetodo.split(' && ').length - 1;
 	return c + 1;
